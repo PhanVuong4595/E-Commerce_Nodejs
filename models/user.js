@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-import crypto from "crypto-js";
+import crypto from "crypto";
 
 // Declare the Schema of the Mongo model
 const userSchema = new mongoose.Schema(
