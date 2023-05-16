@@ -1,2 +1,1 @@
-# E-Commerce_Nodejs
-Create a Modern Ecommerce Project with NodeJS, Express.js, and MongoDB
+npm i express bcrypt cookie-parser crypto-js dotenv express-async-handler nodemailer slugify
