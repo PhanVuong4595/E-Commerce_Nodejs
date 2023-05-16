@@ -65,15 +65,6 @@ export const Login = asyncHandler(async (req, res) => {
   }
 });
 
-export const getCurrent = asyncHandler(async (req, res) => {
-  const { _id } = req.user;
-  const user = await User.findById(_id).select("-refreshToken -password -role");
-  return res.status(200).json({
-    success: user ? true : false,
-    rs: user ? user : "User not found",
-  });
-});
-
 export const refreshAccessToken = asyncHandler(async (req, res) => {
   // Lấy token từ cookies
   const cookie = req.cookies;

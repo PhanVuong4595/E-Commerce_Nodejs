@@ -2,6 +2,14 @@ import User from "../models/user.js";
 
 import asyncHandler from "express-async-handler";
 
+export const getCurrent = asyncHandler(async (req, res) => {
+  const { _id } = req.user;
+  const user = await User.findById(_id).select("-refreshToken -password -role");
+  return res.status(200).json({
+    success: user ? true : false,
+    rs: user ? user : "User not found",
+  });
+});
 export const getUsers = asyncHandler(async (req, res) => {
   const response = await User.find().select("-refreshToken -password -role");
   return res.status(200).json({
